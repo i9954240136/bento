@@ -13,20 +13,18 @@
 
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           CSS — СТИЛЬ ГЛАССМОРФИЗМ v3 (DARK FOGGY)
+           CSS — СТИЛЬ МИНИМАЛИЗМ v2 (FIXED)
            ═══════════════════════════════════════════════════════════════ */
 
         :root {
-            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 50%, #1a1a2e 100%);
-            --card-bg: rgba(30, 30, 40, 0.6);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --text-primary: #e8e8e8;
-            --text-secondary: #a0a0b0;
-            --text-muted: #6a6a7a;
-            --accent-primary: #7c84f3;
-            --accent-secondary: #fbbf24;
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.6);
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --text-primary: #1a1a1a;
+            --text-secondary: #666666;
+            --accent-primary: #000000;
+            --accent-secondary: #444444;
+            --border-color: #e5e5e5;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -42,10 +40,9 @@
 
         body {
             font-family: var(--font-main);
-            background: var(--bg-gradient);
+            background: var(--bg-primary);
             color: var(--text-primary);
             line-height: 1.6;
-            min-height: 100vh;
         }
 
         .container {
@@ -70,13 +67,10 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(20, 20, 30, 0.7);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid var(--card-border);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-color);
             padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
@@ -88,8 +82,7 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text-primary);
-            text-shadow: 0 0 20px rgba(124, 132, 243, 0.4);
+            color: var(--accent-primary);
         }
 
         .nav {
@@ -98,235 +91,180 @@
         }
 
         .nav a {
-            color: var(--text-secondary);
+            color: var(--text-primary);
             font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
         }
 
         .nav a:hover {
-            color: var(--text-primary);
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            color: var(--accent-primary);
         }
 
         /* HERO */
         .hero {
-            padding: 180px 0 120px;
+            padding: 140px 0 80px;
             text-align: center;
-            position: relative;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 50% 50%, rgba(124, 132, 243, 0.1) 0%, transparent 70%);
-            pointer-events: none;
+            background: var(--bg-secondary);
         }
 
         .hero-title {
-            font-size: 3.2rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 25px;
-            color: var(--text-primary);
-            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
-            position: relative;
+            margin-bottom: 20px;
+            color: var(--accent-primary);
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-secondary);
-            margin-bottom: 45px;
-            max-width: 650px;
+            margin-bottom: 30px;
+            max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            position: relative;
         }
 
         .btn {
             display: inline-block;
-            padding: 18px 45px;
-            background: rgba(124, 132, 243, 0.8);
+            padding: 14px 32px;
+            background: var(--accent-primary);
             color: #ffffff;
-            border-radius: 50px;
-            font-weight: 700;
+            border-radius: 6px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: none;
             cursor: pointer;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
-            background: rgba(124, 132, 243, 0.95);
+            background: var(--accent-secondary);
+            color: #ffffff;
         }
 
         /* SECTIONS */
         section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 70px;
-            color: var(--text-primary);
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
+            margin-bottom: 50px;
+            color: var(--accent-primary);
         }
 
         /* ABOUT */
         .about-content {
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            color: var(--text-primary);
-            font-size: 1.15rem;
-            background: var(--card-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 55px;
-            box-shadow: var(--shadow);
+            color: var(--text-secondary);
+            font-size: 1.1rem;
         }
 
         .about-images {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    margin-top: 45px;
-}
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
 
-@media (min-width: 768px) {
-    .about-images {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.about-image {
-    background: rgba(40, 40, 55, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    min-height: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255, 255, 255, 0.3);
-    font-size: 0.85rem;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-}
-
-.about-image:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.5);
-}
+        .about-image {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
 
         /* SERVICES */
+        .services {
+            background: var(--bg-secondary);
+        }
+
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 35px;
+            gap: 30px;
         }
 
         .service-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 45px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            background: rgba(40, 40, 55, 0.7);
-            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow);
         }
 
         .service-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 18px;
-            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--accent-primary);
         }
 
         .service-card p {
             color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
         }
 
         .service-price {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
+            margin-top: 15px;
             color: var(--accent-primary);
-            text-shadow: 0 0 20px rgba(124, 132, 243, 0.4);
         }
 
         /* ADVANTAGES */
         .advantages-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 35px;
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .advantage-card {
             text-align: center;
-            padding: 45px 30px;
-            background: var(--card-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
+            padding: 35px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
             transition: all 0.3s ease;
-            box-shadow: var(--shadow);
         }
 
         .advantage-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            background: rgba(40, 40, 55, 0.7);
-            border-color: rgba(255, 255, 255, 0.15);
+            box-shadow: var(--shadow);
+            transform: translateY(-3px);
         }
 
         .advantage-icon {
-            width: 75px;
-            height: 75px;
-            margin: 0 auto 30px;
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 20px;
             fill: var(--accent-primary);
-            background: rgba(124, 132, 243, 0.1);
-            padding: 20px;
-            border-radius: 50%;
-            border: 1px solid rgba(124, 132, 243, 0.2);
         }
 
         .advantage-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--accent-primary);
         }
 
         .advantage-card p {
             color: var(--text-secondary);
-            font-size: 1rem;
         }
 
         /* CONTACT */
+        .contact {
+            background: var(--bg-secondary);
+        }
+
         .contact-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -334,109 +272,73 @@
         }
 
         .contact-info {
-            background: var(--card-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 45px;
-            box-shadow: var(--shadow);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
         }
 
         .contact-info p {
-            margin-bottom: 22px;
+            margin-bottom: 15px;
             color: var(--text-secondary);
-            font-size: 1.05rem;
         }
 
         .contact-info strong {
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 8px;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-        }
-
-        .contact-info a {
             color: var(--text-primary);
-            font-weight: 500;
-        }
-
-        .contact-info a:hover {
-            color: var(--accent-primary);
         }
 
         .contact-form {
-            background: var(--card-bg);
-            backdrop-filter: blur(40px);
-            -webkit-backdrop-filter: blur(40px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 45px;
-            box-shadow: var(--shadow);
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
         }
 
         .form-group {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            color: var(--text-primary);
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
-            padding: 16px 20px;
-            border: 1px solid var(--card-border);
-            border-radius: 14px;
-            background: rgba(20, 20, 30, 0.5);
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            background: var(--bg-primary);
             color: var(--text-primary);
             font-family: var(--font-main);
             font-size: 1rem;
-            transition: all 0.3s ease;
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: var(--accent-primary);
-            background: rgba(20, 20, 30, 0.7);
-            box-shadow: 0 0 0 4px rgba(124, 132, 243, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 130px;
         }
 
         .form-success {
-            color: #4ade80;
-            margin-top: 20px;
-            font-weight: 700;
+            color: #16a34a;
+            margin-top: 15px;
+            font-weight: 600;
             display: none;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
         }
 
         /* FOOTER */
         .footer {
-            background: rgba(10, 10, 15, 0.5);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-top: 1px solid var(--card-border);
-            padding: 50px 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-color);
+            padding: 30px 0;
             text-align: center;
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: var(--text-secondary);
         }
 
         /* BACK TO TOP BUTTON */
@@ -444,10 +346,11 @@
             position: fixed;
             bottom: 30px;
             right: 30px;
-            width: 55px;
-            height: 55px;
-            background: rgba(124, 132, 243, 0.8);
+            width: 50px;
+            height: 50px;
+            background: var(--accent-primary);
             color: #ffffff;
+            border: none;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -457,10 +360,6 @@
             visibility: hidden;
             transition: all 0.3s ease;
             z-index: 999;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
         }
 
         .back-to-top.visible {
@@ -469,25 +368,24 @@
         }
 
         .back-to-top:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            background: rgba(124, 132, 243, 0.95);
+            background: var(--accent-secondary);
+            transform: translateY(-3px);
         }
 
         .back-to-top svg {
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             fill: #ffffff;
         }
 
         /* RESPONSIVE */
         @media (max-width: 768px) {
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
 
             .nav {
@@ -499,21 +397,21 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
 
             .back-to-top {
                 bottom: 20px;
                 right: 20px;
-                width: 50px;
-                height: 50px;
-            }
-
-            .about-content {
-                padding: 35px;
+                width: 45px;
+                height: 45px;
             }
 
             .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -523,7 +421,12 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-content">
+            <!-- ════════════════════════════════════════════════════════
+                 ЗАМЕНИТЬ: Название компании
+                 ════════════════════════════════════════════════════════ -->
             <div class="logo">Название Компании</div>
+            <!-- ════════════════════════════════════════════════════════ -->
+            
             <nav class="nav">
                 <a href="#about">О нас</a>
                 <a href="#services">Услуги</a>
@@ -536,9 +439,13 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <h1 class="hero-title">Современные решения для вашего бизнеса</h1>
-            <p class="hero-subtitle">Элегантность. Прозрачность. Доверие.</p>
+            <!-- ════════════════════════════════════════════════════════
+                 ЗАМЕНИТЬ: Заголовок и подзаголовок
+                 ════════════════════════════════════════════════════════ -->
+            <h1 class="hero-title">Качественные услуги для вашего бизнеса</h1>
+            <p class="hero-subtitle">Работаем с 2020 года. Гарантия качества. Быстрые сроки.</p>
             <a href="#contact" class="btn">Заказать услугу →</a>
+            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </section>
 
@@ -546,25 +453,35 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">О нас</h2>
+            <!-- ════════════════════════════════════════════════════════
+                 ЗАМЕНИТЬ: Текст о компании
+                 ════════════════════════════════════════════════════════ -->
             <div class="about-content">
                 <p>Мы — команда профессионалов с многолетним опытом работы. 
                 Наша миссия — предоставлять качественные услуги по доступным ценам. 
                 Мы ценим каждого клиента и гарантируем индивидуальный подход.</p>
                 
+                <!-- ════════════════════════════════════════════════════
+                     ЗАМЕНИТЬ: Фото-заглушки (удалить если не нужны)
+                     ════════════════════════════════════════════════════ -->
                 <div class="about-images">
                     <div class="about-image">Фото 1 (600×450 px)</div>
                     <div class="about-image">Фото 2 (600×450 px)</div>
-                    <div class="about-image">Фото 3 (600×450 px)</div>
                 </div>
+                <!-- ════════════════════════════════════════════════════ -->
             </div>
+            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </section>
 
     <!-- SERVICES -->
-    <section id="services">
+    <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Услуги</h2>
             <div class="services-grid">
+                <!-- ════════════════════════════════════════════════════
+                     ЗАМЕНИТЬ: Карточки услуг (можно копировать блоки)
+                     ════════════════════════════════════════════════════ -->
                 <div class="service-card">
                     <h3>Услуга 1</h3>
                     <p>Описание услуги. Что входит, сроки, особенности.</p>
@@ -582,6 +499,7 @@
                     <p>Описание услуги. Что входит, сроки, особенности.</p>
                     <div class="service-price">от 10 000 ₽</div>
                 </div>
+                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
@@ -591,6 +509,9 @@
         <div class="container">
             <h2 class="section-title">Преимущества</h2>
             <div class="advantages-grid">
+                <!-- ════════════════════════════════════════════════════
+                     ЗАМЕНИТЬ: Карточки преимуществ (4 штуки, сетка 2x2)
+                     ════════════════════════════════════════════════════ -->
                 <div class="advantage-card">
                     <svg class="advantage-icon" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
@@ -622,22 +543,30 @@
                     <h3>Надёжно</h3>
                     <p>Работаем по договору</p>
                 </div>
+                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Контакты</h2>
             <div class="contact-content">
+                <!-- ════════════════════════════════════════════════════
+                     ЗАМЕНИТЬ: Контактная информация
+                     ════════════════════════════════════════════════════ -->
                 <div class="contact-info">
                     <p><strong>Телефон:</strong> <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
                     <p><strong>Email:</strong> <a href="mailto:info@company.ru">info@company.ru</a></p>
                     <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
                     <p><strong>Режим работы:</strong> Пн-Пт: 9:00 - 18:00</p>
                 </div>
+                <!-- ════════════════════════════════════════════════════ -->
 
+                <!-- ════════════════════════════════════════════════════
+                     ЗАМЕНИТЬ: Formspree ID (получить на formspree.io)
+                     ════════════════════════════════════════════════════ -->
                 <form class="contact-form" action="https://formspree.io/f/ТВОЙ_ID" method="POST">
                     <div class="form-group">
                         <label for="name">Ваше имя</label>
@@ -654,6 +583,7 @@
                     <button type="submit" class="btn">Отправить заявку</button>
                     <p class="form-success">Спасибо! Заявка отправлена.</p>
                 </form>
+                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
@@ -661,7 +591,11 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
+            <!-- ════════════════════════════════════════════════════════
+                 ЗАМЕНИТЬ: Год и название компании
+                 ════════════════════════════════════════════════════════ -->
             <p>© 2026 Название Компании. Все права защищены.</p>
+            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </footer>
 
@@ -674,6 +608,7 @@
 
     <!-- SCRIPTS -->
     <script>
+        // Form success message
         const form = document.querySelector('.contact-form');
         const formSuccess = document.querySelector('.form-success');
 
@@ -684,6 +619,7 @@
             }, 5000);
         });
 
+        // Back to top button
         const backToTop = document.getElementById('backToTop');
 
         window.addEventListener('scroll', () => {
