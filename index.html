@@ -13,20 +13,20 @@
 
     <style>
         /* ═══════════════════════════════════════════════════════════════
-           CSS — СТИЛЬ ГЛАССМОРФИЗМ v2 (FIXED)
+           CSS — СТИЛЬ ГЛАССМОРФИЗМ v3 (DARK FOGGY)
            ═══════════════════════════════════════════════════════════════ */
 
         :root {
-            --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --card-bg: rgba(255, 255, 255, 0.95);
-            --card-border: rgba(255, 255, 255, 0.4);
-            --text-primary: #1a1a2e;
-            --text-secondary: #4a4a6a;
-            --text-light: #ffffff;
-            --accent-primary: #667eea;
+            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #2d2d44 50%, #1a1a2e 100%);
+            --card-bg: rgba(30, 30, 40, 0.6);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-primary: #e8e8e8;
+            --text-secondary: #a0a0b0;
+            --text-muted: #6a6a7a;
+            --accent-primary: #7c84f3;
             --accent-secondary: #fbbf24;
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.3);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            --shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.6);
             --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
@@ -70,13 +70,13 @@
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(20, 20, 30, 0.7);
+            backdrop-filter: blur(30px);
+            -webkit-backdrop-filter: blur(30px);
+            border-bottom: 1px solid var(--card-border);
             padding: 15px 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .header-content {
@@ -88,8 +88,8 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--accent-primary);
-            text-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+            color: var(--text-primary);
+            text-shadow: 0 0 20px rgba(124, 132, 243, 0.4);
         }
 
         .nav {
@@ -98,56 +98,73 @@
         }
 
         .nav a {
-            color: var(--text-primary);
-            font-weight: 600;
+            color: var(--text-secondary);
+            font-weight: 500;
             font-size: 0.95rem;
+            transition: all 0.3s ease;
         }
 
         .nav a:hover {
-            color: var(--accent-primary);
+            color: var(--text-primary);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
         /* HERO */
         .hero {
-            padding: 160px 0 100px;
+            padding: 180px 0 120px;
             text-align: center;
             position: relative;
         }
 
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(124, 132, 243, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
         .hero-title {
-            font-size: 3rem;
+            font-size: 3.2rem;
             font-weight: 700;
-            margin-bottom: 20px;
-            color: var(--text-light);
-            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 25px;
+            color: var(--text-primary);
+            text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
         }
 
         .hero-subtitle {
             font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 40px;
+            color: var(--text-secondary);
+            margin-bottom: 45px;
             max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
         }
 
         .btn {
             display: inline-block;
-            padding: 16px 40px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--accent-primary);
+            padding: 18px 45px;
+            background: rgba(124, 132, 243, 0.8);
+            color: #ffffff;
             border-radius: 50px;
             font-weight: 700;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.3);
-            background: #ffffff;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+            background: rgba(124, 132, 243, 0.95);
         }
 
         /* SECTIONS */
@@ -159,24 +176,24 @@
             font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 60px;
-            color: var(--text-light);
-            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 70px;
+            color: var(--text-primary);
+            text-shadow: 0 2px 30px rgba(0, 0, 0, 0.4);
         }
 
         /* ABOUT */
         .about-content {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
             text-align: center;
             color: var(--text-primary);
             font-size: 1.15rem;
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 50px;
+            padding: 55px;
             box-shadow: var(--shadow);
         }
 
@@ -184,22 +201,22 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 25px;
-            margin-top: 40px;
+            margin-top: 45px;
         }
 
         .about-image {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(40, 40, 55, 0.5);
             border: 1px solid var(--card-border);
             border-radius: 16px;
             aspect-ratio: 4/3;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
         /* SERVICES */
@@ -211,11 +228,11 @@
 
         .service-card {
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 40px;
+            padding: 45px;
             transition: all 0.3s ease;
             box-shadow: var(--shadow);
         }
@@ -223,7 +240,8 @@
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
-            background: rgba(255, 255, 255, 1);
+            background: rgba(40, 40, 55, 0.7);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .service-card h3 {
@@ -237,13 +255,14 @@
             color: var(--text-secondary);
             font-size: 1.05rem;
             line-height: 1.7;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .service-price {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--accent-primary);
+            text-shadow: 0 0 20px rgba(124, 132, 243, 0.4);
         }
 
         /* ADVANTAGES */
@@ -255,10 +274,10 @@
 
         .advantage-card {
             text-align: center;
-            padding: 40px 30px;
+            padding: 45px 30px;
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
             transition: all 0.3s ease;
@@ -268,23 +287,25 @@
         .advantage-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
-            background: rgba(255, 255, 255, 1);
+            background: rgba(40, 40, 55, 0.7);
+            border-color: rgba(255, 255, 255, 0.15);
         }
 
         .advantage-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 25px;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 30px;
             fill: var(--accent-primary);
-            background: rgba(102, 126, 234, 0.1);
-            padding: 18px;
+            background: rgba(124, 132, 243, 0.1);
+            padding: 20px;
             border-radius: 50%;
+            border: 1px solid rgba(124, 132, 243, 0.2);
         }
 
         .advantage-card h3 {
             font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             color: var(--text-primary);
         }
 
@@ -302,64 +323,70 @@
 
         .contact-info {
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 40px;
+            padding: 45px;
             box-shadow: var(--shadow);
         }
 
         .contact-info p {
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             color: var(--text-secondary);
             font-size: 1.05rem;
         }
 
         .contact-info strong {
-            color: var(--text-primary);
+            color: var(--text-muted);
             display: block;
-            margin-bottom: 6px;
-            font-size: 0.85rem;
+            margin-bottom: 8px;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-weight: 600;
         }
 
         .contact-info a {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
             color: var(--accent-primary);
-            font-weight: 600;
         }
 
         .contact-form {
             background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
             border: 1px solid var(--card-border);
             border-radius: 24px;
-            padding: 40px;
+            padding: 45px;
             box-shadow: var(--shadow);
         }
 
         .form-group {
-            margin-bottom: 22px;
+            margin-bottom: 25px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: var(--text-primary);
-            font-size: 0.9rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 14px 18px;
-            border: 2px solid rgba(102, 126, 234, 0.2);
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.9);
+            padding: 16px 20px;
+            border: 1px solid var(--card-border);
+            border-radius: 14px;
+            background: rgba(20, 20, 30, 0.5);
             color: var(--text-primary);
             font-family: var(--font-main);
             font-size: 1rem;
@@ -370,32 +397,33 @@
         .form-group textarea:focus {
             outline: none;
             border-color: var(--accent-primary);
-            background: #ffffff;
-            box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+            background: rgba(20, 20, 30, 0.7);
+            box-shadow: 0 0 0 4px rgba(124, 132, 243, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 130px;
         }
 
         .form-success {
-            color: #16a34a;
-            margin-top: 18px;
+            color: #4ade80;
+            margin-top: 20px;
             font-weight: 700;
             display: none;
             text-align: center;
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
         }
 
         /* FOOTER */
         .footer {
-            background: rgba(0, 0, 0, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 40px 0;
+            background: rgba(10, 10, 15, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid var(--card-border);
+            padding: 50px 0;
             text-align: center;
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--text-muted);
             font-size: 0.95rem;
         }
 
@@ -406,8 +434,8 @@
             right: 30px;
             width: 55px;
             height: 55px;
-            background: rgba(255, 255, 255, 0.95);
-            color: var(--accent-primary);
+            background: rgba(124, 132, 243, 0.8);
+            color: #ffffff;
             border-radius: 50%;
             cursor: pointer;
             display: flex;
@@ -418,7 +446,9 @@
             transition: all 0.3s ease;
             z-index: 999;
             box-shadow: var(--shadow);
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         .back-to-top.visible {
@@ -429,12 +459,13 @@
         .back-to-top:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-hover);
+            background: rgba(124, 132, 243, 0.95);
         }
 
         .back-to-top svg {
             width: 26px;
             height: 26px;
-            fill: var(--accent-primary);
+            fill: #ffffff;
         }
 
         /* RESPONSIVE */
@@ -480,12 +511,7 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-content">
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Название компании
-                 ════════════════════════════════════════════════════════ -->
             <div class="logo">Название Компании</div>
-            <!-- ════════════════════════════════════════════════════════ -->
-            
             <nav class="nav">
                 <a href="#about">О нас</a>
                 <a href="#services">Услуги</a>
@@ -498,13 +524,9 @@
     <!-- HERO -->
     <section class="hero">
         <div class="container">
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Заголовок и подзаголовок
-                 ════════════════════════════════════════════════════════ -->
             <h1 class="hero-title">Современные решения для вашего бизнеса</h1>
             <p class="hero-subtitle">Элегантность. Прозрачность. Доверие.</p>
             <a href="#contact" class="btn">Заказать услугу →</a>
-            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </section>
 
@@ -512,25 +534,17 @@
     <section id="about">
         <div class="container">
             <h2 class="section-title">О нас</h2>
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Текст о компании
-                 ════════════════════════════════════════════════════════ -->
             <div class="about-content">
                 <p>Мы — команда профессионалов с многолетним опытом работы. 
                 Наша миссия — предоставлять качественные услуги по доступным ценам. 
                 Мы ценим каждого клиента и гарантируем индивидуальный подход.</p>
                 
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Фото-заглушки (удалить если не нужны)
-                     ════════════════════════════════════════════════════ -->
                 <div class="about-images">
                     <div class="about-image">Фото 1 (600×450 px)</div>
                     <div class="about-image">Фото 2 (600×450 px)</div>
                     <div class="about-image">Фото 3 (600×450 px)</div>
                 </div>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
-            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </section>
 
@@ -539,9 +553,6 @@
         <div class="container">
             <h2 class="section-title">Услуги</h2>
             <div class="services-grid">
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Карточки услуг (можно копировать блоки)
-                     ════════════════════════════════════════════════════ -->
                 <div class="service-card">
                     <h3>Услуга 1</h3>
                     <p>Описание услуги. Что входит, сроки, особенности.</p>
@@ -559,7 +570,6 @@
                     <p>Описание услуги. Что входит, сроки, особенности.</p>
                     <div class="service-price">от 10 000 ₽</div>
                 </div>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
@@ -569,9 +579,6 @@
         <div class="container">
             <h2 class="section-title">Преимущества</h2>
             <div class="advantages-grid">
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Карточки преимуществ
-                     ════════════════════════════════════════════════════ -->
                 <div class="advantage-card">
                     <svg class="advantage-icon" viewBox="0 0 24 24">
                         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
@@ -603,7 +610,6 @@
                     <h3>Надёжно</h3>
                     <p>Работаем по договору</p>
                 </div>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
@@ -613,20 +619,13 @@
         <div class="container">
             <h2 class="section-title">Контакты</h2>
             <div class="contact-content">
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Контактная информация
-                     ════════════════════════════════════════════════════ -->
                 <div class="contact-info">
                     <p><strong>Телефон:</strong> <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
                     <p><strong>Email:</strong> <a href="mailto:info@company.ru">info@company.ru</a></p>
                     <p><strong>Адрес:</strong> г. Москва, ул. Примерная, д. 1</p>
                     <p><strong>Режим работы:</strong> Пн-Пт: 9:00 - 18:00</p>
                 </div>
-                <!-- ════════════════════════════════════════════════════ -->
 
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Formspree ID (получить на formspree.io)
-                     ════════════════════════════════════════════════════ -->
                 <form class="contact-form" action="https://formspree.io/f/ТВОЙ_ID" method="POST">
                     <div class="form-group">
                         <label for="name">Ваше имя</label>
@@ -643,7 +642,6 @@
                     <button type="submit" class="btn">Отправить заявку</button>
                     <p class="form-success">Спасибо! Заявка отправлена.</p>
                 </form>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
         </div>
     </section>
@@ -651,11 +649,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Год и название компании
-                 ════════════════════════════════════════════════════════ -->
             <p>© 2026 Название Компании. Все права защищены.</p>
-            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </footer>
 
@@ -668,7 +662,6 @@
 
     <!-- SCRIPTS -->
     <script>
-        // Form success message
         const form = document.querySelector('.contact-form');
         const formSuccess = document.querySelector('.form-success');
 
@@ -679,7 +672,6 @@
             }, 5000);
         });
 
-        // Back to top button
         const backToTop = document.getElementById('backToTop');
 
         window.addEventListener('scroll', () => {
