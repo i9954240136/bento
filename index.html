@@ -274,79 +274,48 @@
             color: var(--accent-primary);
         }
 
-        /* CONTACT BUTTONS */
-.contact-buttons-card .contact-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 20px;
-}
-
-.contact-buttons .contact-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 14px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-}
-
-.contact-buttons .contact-btn span {
-    font-size: 1.2rem;
-}
-
-.contact-buttons .telegram {
-    background: #229ED9;
-    color: #ffffff;
-}
-
-.contact-buttons .whatsapp {
-    background: #25D366;
-    color: #ffffff;
-}
-
-.contact-buttons .email {
-    background: #666666;
-    color: #ffffff;
-}
-
-.contact-buttons .maps {
-    background: #FC0;
-    color: #000000;
-}
-
-.contact-buttons .contact-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    opacity: 0.9;
-}
-
-@media (min-width: 768px) {
-    .contact-buttons-card .contact-buttons {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .contact-buttons .contact-btn {
-        flex: 1;
-        min-width: 140px;
-        justify-content: center;
-    }
-}
-
-        .contact-form-card .btn:hover {
-            background: var(--accent-secondary);
+        /* CONTACT BUTTONS (ИСПРАВЛЕНО — без цвета и эмодзи) */
+        .contact-buttons-card .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
         }
 
-        .form-success {
-            color: #16a34a;
-            margin-top: 15px;
+        .contact-buttons .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 20px;
+            border-radius: 10px;
+            text-decoration: none;
             font-weight: 600;
-            display: none;
-            text-align: center;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+        }
+
+        .contact-buttons .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: var(--accent-primary);
+            color: #ffffff;
+            border-color: var(--accent-primary);
+        }
+
+        @media (min-width: 768px) {
+            .contact-buttons-card .contact-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            
+            .contact-buttons .contact-btn {
+                flex: 1;
+                min-width: 140px;
+            }
         }
 
         /* FOOTER */
@@ -455,12 +424,7 @@
     <!-- HEADER -->
     <header class="header">
         <div class="container header-content">
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Название компании
-                 ════════════════════════════════════════════════════════ -->
             <div class="logo">Название</div>
-            <!-- ════════════════════════════════════════════════════════ -->
-            
             <nav class="nav">
                 <a href="#about">О нас</a>
                 <a href="#services">Услуги</a>
@@ -475,32 +439,21 @@
         <div class="bento-grid">
             <!-- HERO CARD (Full Width) -->
             <div class="bento-card full hero-card">
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Заголовок и подзаголовок
-                     ════════════════════════════════════════════════════ -->
                 <h1>Современные решения для вашего бизнеса</h1>
                 <p>Качество. Надёжность. Результат.</p>
                 <a href="#contact" class="btn">Связаться с нами →</a>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
 
             <!-- ABOUT CARD (Large) -->
             <div class="bento-card large about-card" id="about">
                 <h2 class="card-title">О нас</h2>
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Текст о компании
-                     ════════════════════════════════════════════════════ -->
                 <p>Мы — команда профессионалов с многолетним опытом работы. Наша миссия — предоставлять качественные услуги по доступным ценам. Мы ценим каждого клиента и гарантируем индивидуальный подход.</p>
                 
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Фото-заглушки (удалить если не нужны)
-                     ════════════════════════════════════════════════════ -->
                 <div class="about-images">
                     <div class="about-image">Фото 1</div>
                     <div class="about-image">Фото 2</div>
                     <div class="about-image">Фото 3</div>
                 </div>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
 
             <!-- ADVANTAGE CARD 1 -->
@@ -524,12 +477,8 @@
             <!-- SERVICE CARD 1 -->
             <div class="bento-card service-card" id="services">
                 <h3>Услуга 1</h3>
-                <!-- ════════════════════════════════════════════════════
-                     ЗАМЕНИТЬ: Карточки услуг
-                     ════════════════════════════════════════════════════ -->
                 <p>Описание услуги. Что входит, сроки, особенности.</p>
                 <div class="service-price">5 000 ₽</div>
-                <!-- ════════════════════════════════════════════════════ -->
             </div>
 
             <!-- SERVICE CARD 2 -->
@@ -564,53 +513,52 @@
                 <p>Работаем по договору</p>
             </div>
 
-           <div class="bento-card contact-info-card" id="contact">
-    <h2 class="card-title">Контакты</h2>
-    <p>
-        <strong>📞 Телефон</strong>
-        <a href="tel:+79991234567">+7 (999) 123-45-67</a>
-    </p>
-    <p>
-        <strong>✉️ Email</strong>
-        <a href="mailto:hello@bezumie.tech">hello@bezumie.tech</a>
-    </p>
-    <p>
-        <strong>🗺️ Адрес</strong>
-        г. Москва, ул. Примерная, д. 1
-    </p>
-    <p>
-        <strong>🕐 Режим работы</strong>
-        Пн-Пт: 9:00 - 18:00
-    </p>
-</div>
+            <!-- CONTACT INFO CARD -->
+            <div class="bento-card contact-info-card" id="contact">
+                <h2 class="card-title">Контакты</h2>
+                <p>
+                    <strong>Телефон</strong>
+                    <a href="tel:+79991234567">+7 (999) 123-45-67</a>
+                </p>
+                <p>
+                    <strong>Email</strong>
+                    <a href="mailto:hello@bezumie.tech">hello@bezumie.tech</a>
+                </p>
+                <p>
+                    <strong>Адрес</strong>
+                    г. Москва, ул. Примерная, д. 1
+                </p>
+                <p>
+                    <strong>Режим работы</strong>
+                    Пн-Пт: 9:00 - 18:00
+                </p>
+            </div>
 
-           <!-- CONTACT BUTTONS CARD -->
-<div class="bento-card contact-buttons-card">
-    <h2 class="card-title">Свяжитесь с нами</h2>
-    <div class="contact-buttons">
-        <a href="https://t.me/chevengur92" target="_blank" class="contact-btn telegram">
-            <span>💬</span> Telegram
-        </a>
-        <a href="https://wa.me/79991234567" target="_blank" class="contact-btn whatsapp">
-            <span>📞</span> WhatsApp
-        </a>
-        <a href="mailto:hello@bezumie.tech" class="contact-btn email">
-            <span>✉️</span> Email
-        </a>
-        <a href="https://yandex.ru/maps" target="_blank" class="contact-btn maps">
-            <span>🗺️</span> Яндекс.Карты
-        </a>
+            <!-- CONTACT BUTTONS CARD -->
+            <div class="bento-card contact-buttons-card">
+                <h2 class="card-title">Свяжитесь с нами</h2>
+                <div class="contact-buttons">
+                    <a href="https://t.me/chevengur92" target="_blank" class="contact-btn">
+                        Telegram
+                    </a>
+                    <a href="https://wa.me/79991234567" target="_blank" class="contact-btn">
+                        WhatsApp
+                    </a>
+                    <a href="mailto:hello@bezumie.tech" class="contact-btn">
+                        Email
+                    </a>
+                    <a href="https://yandex.ru/maps" target="_blank" class="contact-btn">
+                        Яндекс.Карты
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
 
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container">
-            <!-- ════════════════════════════════════════════════════════
-                 ЗАМЕНИТЬ: Год и название компании
-                 ════════════════════════════════════════════════════════ -->
             <p>© 2026 Название Компании. Все права защищены.</p>
-            <!-- ════════════════════════════════════════════════════════ -->
         </div>
     </footer>
 
@@ -623,7 +571,6 @@
 
     <!-- SCRIPTS -->
     <script>
-
         // Back to top button
         const backToTop = document.getElementById('backToTop');
 
